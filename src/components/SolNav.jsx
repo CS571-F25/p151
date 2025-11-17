@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 import badgeIcon from '../../public/badgeIcon.jpg'
 
-export default function SolNav(props) {
+export default function SolNav() {
     return <Navbar bg="dark" variant="dark" sticky="top" expand="sm" collapseOnSelect>
         <Container>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

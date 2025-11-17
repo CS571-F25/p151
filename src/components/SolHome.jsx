@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Image, Container, Row, Col } from "react-bootstrap";
 
 import SolNav from "./SolNav";
