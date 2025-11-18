@@ -1,8 +1,8 @@
 import { Image, Container, Row, Col } from "react-bootstrap";
 
 import SolNav from "./SolNav";
-import earthReflection from '../../public/earthReflection.jpg'
-import moonSurface from '../../public/moonSurface.jpg'
+import earthReflection from '/earthReflection.jpg';
+import moonSurface from '/moonSurface.jpg';
 
 export default function SolHome ({ planet }) {
 
@@ -22,7 +22,11 @@ export default function SolHome ({ planet }) {
             </Row>
 
             <Row className="g-0 center-text" style={{ marginTop: 15, marginBottom: 15, marginRight: 15, marginLeft: 70 }}>
-                <Col>
+                <Col xs={10}
+                    sm={10}
+                    md={4}
+                    lg={5}
+                    xl={5}>
                     <h1>
                         Welcome home!
                         <hr/>
@@ -35,7 +39,12 @@ export default function SolHome ({ planet }) {
                     </p>
                 </Col>
 
-                <Col className="col-style-earth">
+                <Col xs={5}
+                    sm={7}
+                    md={6}
+                    lg={6}
+                    xl={6} 
+                    className="col-style-earth">
                     {earth && (
                     <Image
                         src={earth.img}
@@ -46,9 +55,15 @@ export default function SolHome ({ planet }) {
                 </Col>
             </Row>
             
-            <Row className="g-0 center-text" style={{  marginTop: 15, marginBottom: 15, marginRight: 70, marginLeft: 15 }}>
+            <Row className="g-0 center-text" style={{  marginTop: 15, marginBottom: 15, marginRight: 70, marginLeft: 40 }}>
 
-                <Col className="col-style-earth-reflect">
+                <Col 
+                xs={10}
+                sm={10}
+                md={4}
+                lg={5}
+                xl={6}
+                className="col-style-earth-reflect">
                     {earth && (
                     <Image
                         src={earthReflection}
@@ -58,7 +73,13 @@ export default function SolHome ({ planet }) {
                     )}
                 </Col>
 
-                <Col>
+                <Col
+                xs={10}
+                sm={10}
+                md={4}
+                lg={6}
+                xl={5}
+                >
                     <h1>
                         The air is fine here!
                         <hr/>
@@ -73,21 +94,34 @@ export default function SolHome ({ planet }) {
 
             <Row className="g-0 center-text" style={{ marginTop: 15, marginBottom: 15, marginRight: 15, marginLeft: 70 }}>
 
-                <Col>
+                <Col
+                xs={10}
+                sm={10}
+                md={4}
+                lg={5}
+                xl={5}
+                >
                     <h1>
                         Our natural satellite!
                         <hr/>
                     </h1>
                     <p>
                         It so happens that Earth is the only Sol planet with a single moon. Named Luna, it is
-                        the brightest object in our night sky. Like Earth's atmopshere, Luna shares resoonsibility
+                        the brightest object in our night sky. Like Earth's atmopshere, Luna shares responsibility
                         in making Earth a safe home for us. Particularly, Luna stabilizes Earth's wobble through its
                         gravitational pull, making our climate less variable over thousands of years.
                     </p>
                 </Col>
 
 
-                <Col className="col-style-earth">
+                <Col 
+                xs={10}
+                sm={10}
+                md={4}
+                lg={5}
+                xl={6}
+                className="col-style-earth"
+                >
                     <Image
                         src={moonSurface}
                         alt="Earth in the Sun"

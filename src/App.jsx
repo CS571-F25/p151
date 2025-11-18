@@ -1,8 +1,14 @@
-import './App.css'
-import { HashRouter, Route, Routes } from 'react-router'
-import SolHome from './components/SolHome'
-import SolAbout from './components/SolAbout'
-import { useState, useEffect } from 'react'
+import './App.css';
+import { HashRouter, Route, Routes } from 'react-router';
+import { useState, useEffect } from 'react';
+
+import SolHome from './components/SolHome';
+import SolAbout from './components/SolAbout';
+import SolAchievements from './components/SolAchievements';
+import SolPlanets from './components/SolPlanets';
+import SolMoons from './components/SolMoons';
+import SolStats from './components/SolProfile/SolStats';
+import SolCodex from './components/SolProfile/SolCodex';
 
 function App() {
   const [planet, setPlanet] = useState({});
@@ -25,8 +31,13 @@ function App() {
 
   return <HashRouter>
     <Routes>
-      <Route path="/" element={<SolHome planet={planet} setPlanet={setPlanet}/>}></Route>
+      <Route path="/" element={<SolHome planet={planet}/>}></Route>
       <Route path="/about" element={<SolAbout planet={planet}/>}></Route>
+      <Route path="/achievements" element={<SolAchievements planet={planet}/>}></Route>
+      <Route path="/planets" element={<SolPlanets planet={planet}/>}></Route>
+      <Route path="/moons" element={<SolMoons planet={planet}/>}></Route>
+      <Route path="/profile" element={<SolStats/>}></Route>
+      <Route path="/codex" element={<SolCodex/>}></Route>
     </Routes>
   </HashRouter>
 }
