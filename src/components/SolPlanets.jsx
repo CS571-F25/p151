@@ -1,5 +1,5 @@
 import { Image, Container, Row, Col, Pagination, PageItem, Card, Modal, Button } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import SolNav from './SolNav';
 import FlipCard from './SolCardFlip';
