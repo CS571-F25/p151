@@ -1,51 +1,49 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Image} from "react-bootstrap";
 
 import { useSolRank } from "./useSolRank";
 import SolNav from "../SolNav";
+import levelOneBadge from "/levelOneBadge.jpg";
+import levelTwoBadge from "/levelTwoBadge.png";
+import levelThreeBadge from "/levelThreeBadge.jpg";
+import levelFourBadge from "/levelFourBadge.jpeg";
+import levelFiveBadge from "/levelFiveBadge.jpg";
 
 export default function SolStats() {
 
-const {currentExp, currentRank, handleExp} = useSolRank();
+const { currentExp, currentRank } = useSolRank();
 
 return <div className="sol-border">
     <SolNav/>
-    <Container fluid className="p-0">
-        <p>
-            The button below is for debugging purposes to test the global functionality
-            of the profile's rank. The goal: the more you interact with the website, the higher
-            your rank! In the final version of the website, you'll be able to track your rank on
-            the profile page, as well as the drawer that appears when hovering over your badge in
-            the upper right corner of the page.
+    <Container fluid className="p-3">
+        <h2>
+            Your Progress
+        </h2>
+        <hr/>
+        <h5>Badges Collected:</h5>
+        {currentRank === "Explorer" ?
+        <p>You will collect badges as you advance in rank! Keep exploring!</p>
+        :
+        <p>You have collected the following badge(s): <br/>
+        {(currentRank === "Cadet" || currentRank === "Ensign" || currentRank === "Lieutenant" || currentRank === "Commander" || currentRank === "Captain") &&(<Image className="badge-collection" src={levelOneBadge}/>)}
+        {(currentRank === "Ensign" || currentRank === "Lieutenant" || currentRank === "Commander" || currentRank === "Captain") &&(<Image className="badge-collection" src={levelTwoBadge}/>)}
+        {(currentRank === "Lieutenant" || currentRank === "Commander" || currentRank === "Captain") &&(<Image className="badge-collection" src={levelThreeBadge}/>)}
+        {(currentRank === "Commander" || currentRank === "Captain") &&(<Image className="badge-collection" src={levelFourBadge}/>)}
+        {(currentRank === "Captain") &&(<Image className="badge-collection" src={levelFiveBadge}/>)}
         </p>
-        <p>
-            Rank experience thresholds:
-        </p>
-        <Row>
-            <Col/>
-            <Col/>
-            <Col>
-        <ul style={{ justifyItems: 'left'}}>
-            <li>Explorer: 0</li>
-            <li>Cadet: 1</li>
-            <li>Ensign: 5</li>
-            <li>Lieutenant: 10</li>
-            <li>Commander: 15</li>
-            <li>Captain: 20</li>
-        </ul>
-            </Col>
-            <Col/>
-            <Col/>
-        </Row>
-        <Button
-        onClick={() => handleExp()}
-        >
-            Advance Rank!
-        </Button>
-
-        <h4>
-            Current exp: {currentExp} <br/>
-            Current rank: {currentRank}
-        </h4>
+        }
+        <h5>Ranks Obtained:</h5>
+        {currentRank === "Explorer" &&(<p>You have yet to advance in rank! Keep exploring!</p>)}
+        {currentRank === "Cadet" &&(<p>You have advanced past Explorer to Cadet! Keep going!</p>)}
+        {currentRank === "Ensign" &&(<p>You have advanced past Explorer and Cadet. You are now an Ensign!</p>)}
+        {currentRank === "Lieutenant" &&(<p>You have completed training for an Explorer, Cadet and Ensign. You are now a Lieutenant!</p>)}
+        {currentRank === "Commander" &&(<p>The ranks of Explorer, Cadet, Ensign, and Lieutenant were no match for you. You are now a Commander!</p>)}
+        {currentRank === "Captain" &&(<p>I salute you! Having advanced past every possible rank. You are now a Captain!</p>)}
+        <h5>Experience earned:</h5>
+        {currentExp === 0 ?
+        <p>You have not yet earned experience! Look around and you might find some!</p>
+        :
+        <p>You have accumulated {currentExp === 1 ? `${currentExp} experience point` : `${currentExp} experience points`}. Keep it up!</p>
+        }
     </Container>
 </div>
 }

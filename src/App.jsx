@@ -6,9 +6,9 @@ import SolHome from './components/SolHome';
 import SolAbout from './components/SolAbout';
 import SolAchievements from './components/SolAchievements';
 import SolPlanets from './components/SolPlanets';
-import SolMoons from './components/SolMoons';
 import SolStats from './components/SolProfile/SolStats';
 import SolCodex from './components/SolProfile/SolCodex';
+import SolLogin from './components/SolProfile/SolLogin';
 
 function App() {
   const [planet, setPlanet] = useState({});
@@ -35,9 +35,9 @@ function App() {
       <Route path="/about" element={<SolAbout planet={planet}/>}></Route>
       <Route path="/achievements" element={<SolAchievements planet={planet}/>}></Route>
       <Route path="/planets" element={<SolPlanets planet={planet}/>}></Route>
-      <Route path="/moons" element={<SolMoons planet={planet}/>}></Route>
       <Route path="/profile" element={<SolStats/>}></Route>
       <Route path="/codex" element={<SolCodex/>}></Route>
+      <Route path="/login" element={<SolLogin/>}></Route>
     </Routes>
   </HashRouter>
 }
