@@ -124,7 +124,7 @@ export default function SolHome ({ planet }) {
                 >
                     <Image
                         src={moonSurface}
-                        alt="Earth in the Sun"
+                        alt="Luna"
                         className="contain-img"
                     />
                 </Col>

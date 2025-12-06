@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useSolRank } from './SolProfile/useSolRank';
 
-export default function SolCardFlip({ front, back, cardId }) {
+export default function SolCardFlip({ front, back, cardId, direction = "horizontal" }) {
     const [flipped, setFlipped] = useState(false);
     const { handleExp } = useSolRank();
 
@@ -16,7 +16,7 @@ export default function SolCardFlip({ front, back, cardId }) {
     }
 
     return <div
-        className={`flip-card ${flipped ? "flipped" : ""}`}
+        className={`flip-card ${direction} ${flipped ? "flipped" : ""}`}
         onClick={handleClick}
       >
         <div className='flip-card-inner'>

@@ -1,9 +1,9 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router";
 
-import badgeIcon from '/badgeIcon.jpg';
 import SolRank from "./SolProfile/SolRank";
 import { useSolLogin } from "./SolProfile/useSolLogin";
+import solSystem from "/solSystem.png";
 
 export default function SolNav() {
     const { isLoggedIn } = useSolLogin();
@@ -14,7 +14,7 @@ export default function SolNav() {
             <Navbar.Brand as={Link} to="/">
                 <img
                     alt="Sol Logo"
-                    src={badgeIcon}
+                    src={solSystem}
                     width="30"
                     height="30"
                     className="d-inline-block align-top"

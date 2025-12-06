@@ -187,19 +187,19 @@ export function SolRankProvider({ children }) {
 }
 
 function getRank(exp) {
-    if (exp >= 20) {
+    if (exp >= 38) {
         return "Captain";
     }
-    if (exp >= 15) {
+    if (exp >= 28) {
         return "Commander";
     }
-    if (exp >= 10) {
+    if (exp >= 21) {
         return "Lieutenant";
     }
-    if (exp >= 5) {
+    if (exp >= 14) {
         return "Ensign";
     }
-    if (exp >= 1) {
+    if (exp >= 7) {
         return "Cadet";
     }
     return "Explorer";

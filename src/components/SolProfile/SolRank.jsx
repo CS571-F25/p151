@@ -11,6 +11,7 @@ import levelTwoBadge from "/levelTwoBadge.png";
 import levelThreeBadge from "/levelThreeBadge.jpg";
 import levelFourBadge from "/levelFourBadge.jpeg";
 import levelFiveBadge from "/levelFiveBadge.jpg";
+import explorerIcon from "/explorerIcon.png";
 
 export default function SolRank() {
     const [show, setShow] = useState(false);
@@ -72,8 +73,8 @@ export default function SolRank() {
             {currentRank === "Explorer" &&(
                 <Image
                     ref={badgeRef}
-                    alt="Sol Level One Badge"
-                    src={levelOneBadge}
+                    alt="Sol Explorer Icon"
+                    src={explorerIcon}
                     width={30}
                     height={30}
                     roundedCircle

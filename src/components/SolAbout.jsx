@@ -11,6 +11,7 @@ export default function SolAbout ({ planet }) {
             <Image
             className="sol-banner"
             src={nebula.img}
+            alt="Nebula 1"
             />
         )}
 
@@ -38,24 +39,19 @@ export default function SolAbout ({ planet }) {
                 </h1>
                 <hr className="shrink-hr"/>
                 <p className="proper-para">
-                    Each and every image and fact was sourced from NASA directly. If you would like to
-                    visit the links themselves, please feel free to expand the below list and check them out!
+                    Each and every fact was sourced from NASA directly. If you would like to
+                    explore more of the content discussed on this project, feel free to check out their website!
                 </p>
                 </Col>
                 <Col/>
             </Row>
-            <Button className="proper-button"
-            style={{ border: 0, backgroundColor: 'gray' }}
-            onClick={() => alert("Still implementing! =)")}
-            >
-                Check out the links!
-            </Button>
         </Container>
 
         {nebula && (
             <Image
             className="sol-footer"
             src={nebula.img}
+            alt="Nebula 2"
             />
         )}
     </div>

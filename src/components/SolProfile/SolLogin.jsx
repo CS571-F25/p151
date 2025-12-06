@@ -75,19 +75,24 @@ export default function SolLogin() {
             <Row>
                 <Col/>
                 <Col xs={12} sm={8} md={6} lg={4}>
-                    <h2>{isSignup ? "Sign Up" : "Login"}</h2>
+                    <h1 style={{ fontSize: 30 }}>{isSignup ? "Sign Up" : "Login"}</h1>
                     <hr/>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                            <Form.Label>Username</Form.Label>
+                            <Form.Label htmlFor="username">Username</Form.Label>
                             <Form.Control
+                                id="username"
+                                placeholder='Enter your username'
+                                type="username"
                                 value={username}
                                 onChange={e => setUsername(e.target.value)}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label htmlFor="password">Password</Form.Label>
                             <Form.Control
+                                id="password"
+                                placeholder='Enter your password'
                                 type="password"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
@@ -98,7 +103,11 @@ export default function SolLogin() {
                         </Button>
                         <Button
                             variant="secondary"
-                            onClick={() => setIsSignup(prev => !prev)}
+                            onClick={() => (
+                                setIsSignup(prev => !prev),
+                                setPassword(""),
+                                setUsername("")
+                            )}
                         >
                             {isSignup ? "Have an account? Login" : "Need an account? Sign Up"}
                         </Button>
