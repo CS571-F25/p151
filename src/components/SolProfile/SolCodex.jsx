@@ -3,7 +3,7 @@ import SolNav from "../SolNav";
 import { useSolRank } from "./useSolRank";
 import { CODEX_ENTRIES } from "./SolCodexEntries";
 
-//MARKERS//
+//START OF MARKERS//
 import mercuryMarker from '/mercuryMarker.png';
 import venusMarker from '/venusMarker.png';
 import earthMarker from '/earthMarker.png';

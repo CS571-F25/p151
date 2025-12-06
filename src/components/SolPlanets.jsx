@@ -8,7 +8,7 @@ import { useSolLogin } from './SolProfile/useSolLogin';
 import { useSolRank } from './SolProfile/useSolRank';
 import { CODEX_ENTRIES } from './SolProfile/SolCodexEntries';
 
-//IMAGES//
+//START OF IMAGES//
 import mars from '/mars.jpg';
 import jupiter from '/jupiter.jpeg';
 import saturn from '/saturn.jpg';
